@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'pages/Login/Login.dart';
+import 'pages/Home/Home.dart';
 
 void main() {
-  runApp(const Home());
+  runApp(const Routes());
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Routes extends StatelessWidget {
+  const Routes({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class Home extends StatelessWidget {
       initialRoute: Login.id,
       routes: {
         Login.id: (context) => const Login(),
+        Home.id: (context) => const Home(),
       },
     );
   }

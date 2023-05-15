@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../components/Button/Button.dart';
 
 class Login extends StatelessWidget {
-  static String id = '/LoginPage';
-
   const Login({super.key});
+
+  static String id = '/LoginPage';
 
   @override
   Widget build(BuildContext context) {

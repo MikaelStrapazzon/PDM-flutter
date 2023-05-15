@@ -1,3 +1,4 @@
+import 'package:PDM_flutter/layouts/LoggedLayout/LoggedLayout.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -7,7 +8,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset("assets/Images/esquilo.jpg");
+    return LoggedLayout(child: Image.asset("assets/Images/esquilo.jpg"));
   }
 
 }

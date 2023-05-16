@@ -72,7 +72,10 @@ class _LoggedLayoutState extends State<LoggedLayout> {
             ListTile(
               leading: const Icon(Icons.exit_to_app),
               title: const Text('Logout'),
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Login())),
+              onTap: () => {
+                  SessionManager().destroy(),
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Login())),
+              }
             ),
           ],
         ),

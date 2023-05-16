@@ -4,6 +4,7 @@ import 'package:flutter_session_manager/flutter_session_manager.dart';
 import '../../pages/Home/Home.dart';
 import '../../pages/Login/Login.dart';
 import '../../pages/Profile/Profile.dart';
+import '../../pages/ChangPassword/ChangePassword.dart';
 
 class LoggedLayout extends StatefulWidget {
   const LoggedLayout({Key? key, required this.child}) : super(key: key);
@@ -66,8 +67,13 @@ class _LoggedLayoutState extends State<LoggedLayout> {
             ),
             ListTile(
               leading: const Icon(Icons.person),
-              title: const Text('Profile'),
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Profile())),
+              title: const Text('Perfil'),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Profile())),
+            ),
+            ListTile(
+              leading: const Icon(Icons.vpn_key_rounded),
+              title: const Text('Trocar Senha'),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ChangePassword())),
             ),
             ListTile(
               leading: const Icon(Icons.exit_to_app),

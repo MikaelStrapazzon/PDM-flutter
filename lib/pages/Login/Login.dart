@@ -32,6 +32,7 @@ class Login extends StatelessWidget {
           const Text("Senha:"),
           TextField(
             controller: passwordController,
+            obscureText: true,
             decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10)
@@ -40,7 +41,6 @@ class Login extends StatelessWidget {
           ),
           Button(
               onPressed: () => {
-  // Store value to session
                 SessionManager().set("username", usernameController.value.text),
                 SessionManager().set("password", passwordController.value.text),
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()))

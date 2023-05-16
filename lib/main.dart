@@ -1,3 +1,4 @@
+import 'package:PDM_flutter/pages/Profile/Profile.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/Login/Login.dart';
@@ -14,10 +15,11 @@ class Routes extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
-      initialRoute: Login.id,
+      initialRoute: Profile.id,
       routes: {
         Login.id: (context) => Login(),
         Home.id: (context) => const Home(),
+        Profile.id: (context) => const Profile()
       },
     );
   }

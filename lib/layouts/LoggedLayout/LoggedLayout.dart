@@ -25,7 +25,7 @@ class _LoggedLayoutState extends State<LoggedLayout> {
 
   Future<void> getUsernameFromSession() async {
     final username = await SessionManager().get("username");
-    username != null ? setState(() {this.username = username;}) : '';
+    username != null ? setState(() {this.username = username.toString();}) : '';
   }
 
   @override
@@ -47,13 +47,9 @@ class _LoggedLayoutState extends State<LoggedLayout> {
                     style: TextStyle(color: Colors.white, fontSize: 25),
                     textAlign: TextAlign.center,
                   ),
-                  ClipOval(
-                    child:
-                      Image.asset(
-                        "assets/Images/user.png",
-                        height: 80,
-                        width: 100,
-                      )
+                  const CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage("assets/Images/user.png"),
                   ),
                   Text(
                     username,
@@ -71,7 +67,7 @@ class _LoggedLayoutState extends State<LoggedLayout> {
             ListTile(
               leading: const Icon(Icons.person),
               title: const Text('Profile'),
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Profile())),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Profile())),
             ),
             ListTile(
               leading: const Icon(Icons.exit_to_app),

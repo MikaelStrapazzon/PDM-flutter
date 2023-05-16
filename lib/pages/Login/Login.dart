@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_session_manager/flutter_session_manager.dart';
+
+import '../Home/Home.dart';
 
 import '../../components/Button/Button.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  Login({super.key});
 
   static String id = '/LoginPage';
+
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +22,7 @@ class Login extends StatelessWidget {
           const Text("LOGIN"),
           const Text("Nome:"),
           TextField(
+            controller: usernameController,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10)
@@ -24,6 +31,7 @@ class Login extends StatelessWidget {
           ),
           const Text("Senha:"),
           TextField(
+            controller: passwordController,
             decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10)
@@ -31,7 +39,12 @@ class Login extends StatelessWidget {
             ),
           ),
           Button(
-              onPressed: () {},
+              onPressed: () => {
+  // Store value to session
+                SessionManager().set("username", usernameController.value.text),
+                SessionManager().set("password", passwordController.value.text),
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()))
+              },
               buttonText: "Login"
           )
         ],

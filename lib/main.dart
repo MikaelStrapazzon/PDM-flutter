@@ -16,7 +16,7 @@ class Routes extends StatelessWidget {
       debugShowCheckedModeBanner: true,
       initialRoute: Login.id,
       routes: {
-        Login.id: (context) => const Login(),
+        Login.id: (context) => Login(),
         Home.id: (context) => const Home(),
       },
     );

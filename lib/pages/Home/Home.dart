@@ -1,5 +1,6 @@
-import 'package:PDM_flutter/layouts/LoggedLayout/LoggedLayout.dart';
 import 'package:flutter/material.dart';
+
+import '../../layouts/LoggedLayout/LoggedLayout.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

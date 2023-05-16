@@ -47,7 +47,14 @@ class _LoggedLayoutState extends State<LoggedLayout> {
                     style: TextStyle(color: Colors.white, fontSize: 25),
                     textAlign: TextAlign.center,
                   ),
-                  const Icon(Icons.person),
+                  ClipOval(
+                    child:
+                      Image.asset(
+                        "assets/Images/user.png",
+                        height: 80,
+                        width: 100,
+                      )
+                  ),
                   Text(
                     username,
                     style: const TextStyle(color: Colors.white, fontSize: 16),

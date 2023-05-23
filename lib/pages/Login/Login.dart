@@ -17,28 +17,67 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.limeAccent,
-      body: ListView(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text("LOGIN"),
-          const Text("Nome:"),
-          TextField(
-            controller: usernameController,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10)
-              )
+          const Text(
+            'Login',
+            style: TextStyle(
+              fontSize: 36,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          const Text("Senha:"),
-          TextField(
-            controller: passwordController,
-            obscureText: true,
-            decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                )
+          const SizedBox(height: 60),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child:
+            Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Nome:",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextField(
+                    controller: usernameController,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)
+                        )
+                    ),
+                  ),
+                ]
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child:
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Senha:",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextField(
+                    controller: passwordController,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)
+                        )
+                    ),
+                  ),
+                ]
+              ),
+          ),
+          const SizedBox(height: 20),
           Button(
               onPressed: () => {
                 SessionManager().set("username", usernameController.value.text),
